@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Certificacion</title>
+    <style>
+      @page {
+        size: A4 landscape;
+        margin: 24mm;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: #111827;
+      }
+
+      .certificate {
+        border: 6px solid #5b43d6;
+        min-height: 145mm;
+        padding: 24mm;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 34px;
+        margin: 0 0 24px;
+      }
+
+      .name {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 20px 0;
+      }
+
+      .program {
+        font-size: 22px;
+        margin: 20px 0 40px;
+      }
+
+      .footer {
+        margin-top: 42px;
+        font-size: 14px;
+        color: #4b5563;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="certificate">
+      <h1>Certificacion</h1>
+      <p>Se certifica que</p>
+      <p class="name">{{ user.name }}</p>
+      <p>ha sido asociado correctamente a la convocatoria</p>
+      <p class="program">{{ convocatoria.name }}</p>
+      <p class="footer">
+        Documento: {{ user.document or "N/A" }}
+        {% if campus and campus.response_id %}
+          | ID Atnova: {{ campus.response_id }}
+        {% endif %}
+      </p>
+    </section>
+  </body>
+</html>

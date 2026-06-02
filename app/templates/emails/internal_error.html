@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Error integracion Atnova</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; color: #1f2937; line-height: 1.5;">
+    <h1>Error en integracion Atnova</h1>
+    <p><strong>Evento:</strong> {{ event.event_id }}</p>
+    <p><strong>Usuario:</strong> {{ event.user.name }} - {{ event.user.email }}</p>
+    <p><strong>Convocatoria:</strong> {{ event.convocatoria.name }}</p>
+
+    {% if error %}
+      <p><strong>Codigo:</strong> {{ error.code or "N/A" }}</p>
+      <p><strong>Mensaje:</strong> {{ error.message }}</p>
+    {% endif %}
+  </body>
+</html>
