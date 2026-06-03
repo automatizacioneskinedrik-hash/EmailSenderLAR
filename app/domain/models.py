@@ -1,4 +1,5 @@
 from enum import StrEnum
+from datetime import date
 
 from pydantic import BaseModel, EmailStr, Field
 
@@ -36,6 +37,7 @@ class CampusEvent(BaseModel):
     status: CampusEventStatus
     user: UserPayload
     convocatoria: ConvocatoriaPayload
+    enrollment_date: date | None = None
     campus: CampusPayload | None = None
     error: ErrorPayload | None = None
 
