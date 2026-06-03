@@ -35,6 +35,7 @@ class ProcessCampusResult:
 
     async def _send_welcome_email(self, event: CampusEvent) -> None:
         first_name = event.user.name.strip().split()[0]
+        enrollment_date = self._format_enrollment_date(event)
 
         certificate_pdf = self.pdf_generator.generate(
             "certificates/certification.html",
