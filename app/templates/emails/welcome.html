@@ -2,13 +2,158 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Bienvenido a {{ convocatoria.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a LAR Education HUB</title>
   </head>
-  <body style="font-family: Arial, sans-serif; color: #1f2937; line-height: 1.5;">
-    <h1>Hola {{ user.name }}</h1>
-    <p>Tu usuario fue creado y asociado correctamente a la convocatoria:</p>
-    <p><strong>{{ convocatoria.name }}</strong></p>
-    <p>Adjuntamos tu certificacion personalizada en PDF.</p>
-    <p>Equipo Atnova</p>
+  <body style="margin:0; padding:0; background-color:#f5f5f5; font-family:Arial, Helvetica, sans-serif; color:#090A0B;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%; background-color:#f5f5f5; margin:0; padding:0;">
+      <tr>
+        <td align="center" style="padding:20px 10px;">
+          <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:600px; max-width:600px; background-color:#ffffff; border-collapse:collapse;">
+            <tr>
+              <td style="background-color:#EE5522; padding:18px 24px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td align="left" style="color:#ffffff; font-size:18px; line-height:24px; font-weight:700; letter-spacing:0;">
+                      <img src="https://api.builder.io/api/v1/image/assets/TEMP/9fe7a0e4904a7c99ec298b92c957a2ec8a760fe6?width=232" width="116" alt="LAR Education HUB" style="display:block; width:116px; max-width:116px; height:auto; border:0; outline:none; text-decoration:none;">
+                    </td>
+                    <td align="right" style="color:#ffffff; font-size:18px; line-height:24px; font-weight:700;">
+                      <img src="https://api.builder.io/api/v1/image/assets/TEMP/f455e9a57f4e9d3bb7a680cb4abfa9168b74920b?width=64" width="32" alt="LAR" style="display:block; width:32px; max-width:32px; height:auto; border:0; outline:none; text-decoration:none;">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0; background-color:#ffffff;">
+                <img src="https://storage.googleapis.com/assets-lar/Email%20Assets/Foto-Hero-Mail.jpg" width="600" alt="Bienvenido a LAR Education HUB" style="display:block; width:600px; max-width:100%; height:auto; border:0; outline:none; text-decoration:none;">
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:44px 50px 22px;">
+                <h1 style="margin:0; color:#EE5522; font-size:30px; line-height:38px; font-weight:700; text-align:center;">
+                  &iexcl;Bienvenido a la elite {{ first_name }}!
+                </h1>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0 50px 24px;">
+                <p style="margin:0; color:#090A0B; font-size:13px; line-height:21px; font-weight:400; text-align:center;">
+                  Hola {{ first_name }},<br>
+                  &iexcl;Te damos la bienvenida a LAR Education HUB!<br>
+                  Nos alegra muchisimo que formes parte del programa
+                  <strong>{{ convocatoria.name }}</strong>, una experiencia formativa disenada para ayudarte a crecer, actualizar tus conocimientos y desarrollar nuevas competencias que marcaran la diferencia en tu trayectoria profesional.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0 50px 24px;">
+                <p style="margin:0; color:#090A0B; font-size:13px; line-height:21px; font-weight:400; text-align:center;">
+                  Durante este programa tendras acceso a contenidos practicos, recursos exclusivos y acompanamiento para que puedas avanzar a tu ritmo y aprovechar al maximo cada modulo. Estamos convencidos de que este sera un paso importante en tu desarrollo y queremos acompanarte en todo el proceso.
+                  <br><strong>Tus accesos al campus</strong><br>
+                  Ya puedes acceder a nuestro campus virtual con los siguientes datos:
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0 50px 28px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%; border-collapse:collapse; border:1px solid #1D6898;">
+                  <tr>
+                    <td align="center" width="50%" style="background-color:#1D6898; color:#ffffff; font-size:12px; line-height:18px; font-weight:700; padding:8px 10px; border-right:1px solid #ffffff;">
+                      Usuario
+                    </td>
+                    <td align="center" width="50%" style="background-color:#1D6898; color:#ffffff; font-size:12px; line-height:18px; font-weight:700; padding:8px 10px;">
+                      Contrase&ntilde;a
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" width="50%" style="background-color:#ffffff; color:#090A0B; font-size:13px; line-height:20px; font-weight:700; padding:10px; border-right:1px solid #1D6898;">
+                      {{ campus.username if campus and campus.username else user.email }}
+                    </td>
+                    <td align="center" width="50%" style="background-color:#ffffff; color:#090A0B; font-size:13px; line-height:20px; font-weight:700; padding:10px;">
+                      {{ campus.password if campus and campus.password else "Pendiente de entrega" }}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0 50px 28px;">
+                <p style="margin:0 0 14px; color:#090A0B; font-size:13px; line-height:21px; font-weight:700; text-align:center;">
+                  Recomendaciones para comenzar:
+                </p>
+                <p style="margin:0; color:#090A0B; font-size:13px; line-height:23px; font-weight:400; text-align:center;">
+                  &bull; Accede al campus y revisa el modulo de bienvenida.<br>
+                  &bull; Completa tu perfil de estudiante.<br>
+                  &bull; Reserva un momento semanal para avanzar en la formacion.<br>
+                  {% if campus and (campus.enrollment_certificate_url or campus.educational_services_contract_url) %}
+                    &bull; Puedes descargar los documentos contractuales en los siguientes enlaces:<br><br>
+                    {% if campus.enrollment_certificate_url %}
+                      <a href="{{ campus.enrollment_certificate_url }}" style="color:#090A0B; text-decoration:underline;">Certificado de Matricula</a>
+                    {% endif %}
+                    {% if campus.enrollment_certificate_url and campus.educational_services_contract_url %} - {% endif %}
+                    {% if campus.educational_services_contract_url %}
+                      <a href="{{ campus.educational_services_contract_url }}" style="color:#090A0B; text-decoration:underline;">Contrato de servicios educativos</a>
+                    {% endif %}
+                    <br><br>
+                  {% endif %}
+                  Recuerda que el aprendizaje constante abre nuevas oportunidades,<br>
+                  y hoy estas dando un gran paso hacia ellas.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0 50px 28px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%; border-collapse:collapse;">
+                  <tr>
+                    <td align="center" bgcolor="#EE5522" style="border-radius:24px; background-color:#EE5522;">
+                      <a href="{{ campus.platform_url if campus and campus.platform_url else '#' }}" style="display:block; padding:13px 24px; color:#ffffff; font-size:16px; line-height:20px; font-weight:700; text-align:center; text-decoration:none; border-radius:24px;">
+                        Accede a la plataforma
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0 50px 36px;">
+                <p style="margin:0; color:#090A0B; font-size:13px; line-height:23px; font-weight:400; text-align:center;">
+                  Si necesitas ayuda o tienes cualquier duda, estaremos encantados de acompanarte.<br><br>
+                  &iexcl;Te deseamos una experiencia increible en LAR Education HUB!<br><br>
+                  Un cordial saludo,<br>
+                  <strong>Equipo Universidad LAR</strong><br>
+                  support@laruniversity.com | +34 913 930 319
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0 50px 26px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%; border-collapse:collapse; border-top:1px solid #d7dadd;">
+                  <tr>
+                    <td align="center" style="padding:18px 0 0; color:#97A0A5; font-size:12px; line-height:18px; font-weight:400; text-align:center;">
+                      Al ingresar a la plataforma, aceptas nuestra<br>
+                      <a href="#" style="color:#97A0A5; text-decoration:underline;">Politica de Privacidad</a>
+                      y
+                      <a href="#" style="color:#97A0A5; text-decoration:underline;">Terminos y Condiciones</a>
+                      <br><br>
+                      &copy; 2026 LAR Education Hub - Todos los derechos reservados
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

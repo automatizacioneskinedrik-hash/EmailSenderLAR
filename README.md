@@ -35,7 +35,7 @@ uvicorn app.main:app --reload --port 8080
 curl -X POST http://localhost:8080/webhooks/crm-campus-result ^
   -H "Content-Type: application/json" ^
   -H "X-Secret-Token: change-me" ^
-  -d "{\"event_id\":\"crm-123\",\"status\":\"success\",\"user\":{\"name\":\"Carlos Perez\",\"email\":\"carlos@example.com\",\"document\":\"123456789\"},\"convocatoria\":{\"id\":\"conv-001\",\"name\":\"Diplomado Seguridad\"},\"campus\":{\"user_created\":true,\"associated\":true,\"response_id\":\"atnova-789\"}}"
+  -d "{\"event_id\":\"crm-123\",\"status\":\"success\",\"user\":{\"name\":\"Carlos Perez\",\"email\":\"carlos@example.com\",\"document\":\"123456789\"},\"convocatoria\":{\"id\":\"conv-001\",\"name\":\"Diplomado Seguridad\"},\"campus\":{\"user_created\":true,\"associated\":true,\"response_id\":\"atnova-789\",\"username\":\"carlos.perez\",\"password\":\"Temporal123\",\"platform_url\":\"https://campus.example.com\",\"enrollment_certificate_url\":\"https://docs.example.com/matricula.pdf\",\"educational_services_contract_url\":\"https://docs.example.com/contrato.pdf\"}}"
 ```
 
 ## Ejemplo curl con error

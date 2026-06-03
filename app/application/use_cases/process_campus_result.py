@@ -19,6 +19,8 @@ class ProcessCampusResult:
         await self._send_internal_error_email(event)
 
     async def _send_welcome_email(self, event: CampusEvent) -> None:
+        first_name = event.user.name.strip().split()[0]
+
         certificate_pdf = self.pdf_generator.generate(
             "certificates/certification.html",
             {
@@ -32,6 +34,7 @@ class ProcessCampusResult:
             "emails/welcome.html",
             {
                 "user": event.user,
+                "first_name": first_name,
                 "convocatoria": event.convocatoria,
                 "campus": event.campus,
             },

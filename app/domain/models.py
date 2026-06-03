@@ -1,6 +1,6 @@
 from enum import StrEnum
 
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import AliasChoices, BaseModel, ConfigDict, EmailStr, Field
 
 
 class CampusEventStatus(StrEnum):
@@ -20,9 +20,39 @@ class ConvocatoriaPayload(BaseModel):
 
 
 class CampusPayload(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
     user_created: bool | None = None
     associated: bool | None = None
     response_id: str | None = None
+    username: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("username", "user_name", "USERNAME"),
+    )
+    password: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("password", "user_password", "USERPASSWORD"),
+    )
+    platform_url: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("platform_url", "campus_url", "PLATFORM_URL"),
+    )
+    enrollment_certificate_url: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices(
+            "enrollment_certificate_url",
+            "certificate_url",
+            "CERTIFICATE_URL",
+        ),
+    )
+    educational_services_contract_url: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices(
+            "educational_services_contract_url",
+            "contract_url",
+            "CONTRACT_URL",
+        ),
+    )
 
 
 class ErrorPayload(BaseModel):
