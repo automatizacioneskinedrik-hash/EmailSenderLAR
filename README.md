@@ -32,14 +32,10 @@ uvicorn app.main:app --reload --port 8080
 ## Ejemplo curl exitoso
 
 ```bash
-curl -X POST http://localhost:8080/webhooks/crm-campus-result ^
+curl.exe -X POST "http://localhost:8080/webhooks/crm-campus-result" ^
   -H "Content-Type: application/json" ^
   -H "X-Secret-Token: change-me" ^
-<<<<<<< HEAD
-  -d "{\"event_id\":\"crm-123\",\"status\":\"success\",\"user\":{\"name\":\"Carlos Perez\",\"email\":\"carlos@example.com\",\"document\":\"123456789\"},\"convocatoria\":{\"id\":\"conv-001\",\"name\":\"Diplomado Seguridad\"},\"campus\":{\"user_created\":true,\"associated\":true,\"response_id\":\"atnova-789\",\"username\":\"carlos.perez\",\"password\":\"Temporal123\",\"platform_url\":\"https://campus.example.com\",\"enrollment_certificate_url\":\"https://docs.example.com/matricula.pdf\",\"educational_services_contract_url\":\"https://docs.example.com/contrato.pdf\"}}"
-=======
-  -d "{\"event_id\":\"crm-123\",\"status\":\"success\",\"enrollment_date\":\"2026-06-03\",\"user\":{\"name\":\"Carlos Perez\",\"email\":\"carlos@example.com\",\"document\":\"123456789\"},\"convocatoria\":{\"id\":\"conv-001\",\"name\":\"Diplomado Seguridad\"},\"campus\":{\"user_created\":true,\"associated\":true,\"response_id\":\"atnova-789\"}}"
->>>>>>> 401c820425093c23edcd79d8754c73ca8099b5c1
+  -d "{\"event_id\":\"crm-123\",\"status\":\"success\",\"enrollment_date\":\"2026-06-04\",\"user\":{\"name\":\"Carlos Perez\",\"email\":\"ncfernandez.kinedrik@gmail.com\",\"document\":\"123456789\"},\"convocatoria\":{\"id\":\"conv-001\",\"name\":\"Diplomado Seguridad\"},\"campus\":{\"user_created\":true,\"associated\":true,\"response_id\":\"atnova-789\",\"username\":\"carlos.perez\",\"password\":\"Temporal123\",\"platform_url\":\"https://campus.example.com\",\"enrollment_certificate_url\":\"https://docs.example.com/matricula.pdf\",\"educational_services_contract_url\":\"https://docs.example.com/contrato.pdf\"}}"
 ```
 
 ## Ejemplo curl con error
@@ -54,5 +50,8 @@ curl -X POST http://localhost:8080/webhooks/crm-campus-result ^
 ## Variables importantes
 
 Configura `.env` con las credenciales SMTP reales antes de probar envios.
+
+Las imagenes del correo usan URLs directas de GCS dentro de las plantillas.
+Si un cliente no carga bien los recursos, normalmente es por bloqueo de imagenes remotas o por soporte limitado para SVG.
 
 Nunca subas `.env` al repositorio.
