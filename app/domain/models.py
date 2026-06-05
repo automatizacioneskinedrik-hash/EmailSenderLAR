@@ -34,24 +34,12 @@ class CampusPayload(BaseModel):
         default=None,
         validation_alias=AliasChoices("password", "user_password", "USERPASSWORD"),
     )
-    platform_url: str | None = Field(
-        default=None,
-        validation_alias=AliasChoices("platform_url", "campus_url", "PLATFORM_URL"),
-    )
     enrollment_certificate_url: str | None = Field(
         default=None,
         validation_alias=AliasChoices(
             "enrollment_certificate_url",
             "certificate_url",
             "CERTIFICATE_URL",
-        ),
-    )
-    educational_services_contract_url: str | None = Field(
-        default=None,
-        validation_alias=AliasChoices(
-            "educational_services_contract_url",
-            "contract_url",
-            "CONTRACT_URL",
         ),
     )
 

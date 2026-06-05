@@ -55,6 +55,8 @@ class ProcessCampusResult:
                 "convocatoria": event.convocatoria,
                 "campus": event.campus,
                 "enrollment_date": enrollment_date,
+                "campus_platform_url": settings.campus_platform_url,
+                "educational_services_contract_url": settings.educational_services_contract_url,
             },
         )
 

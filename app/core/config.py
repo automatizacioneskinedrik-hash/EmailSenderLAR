@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     smtp_start_tls: bool = True
 
     internal_alert_email: EmailStr = "gestion@example.com"
+    campus_platform_url: str = "https://campus.laruniversity.com/"
+    educational_services_contract_url: str = (
+        "https://pagoseguro.laruniversity.com/contrato-servicios/"
+    )
 
     gcp_project_id: str | None = None
     gcp_location: str = "us-central1"

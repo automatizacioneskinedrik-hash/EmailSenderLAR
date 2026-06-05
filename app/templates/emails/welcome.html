@@ -92,17 +92,12 @@
                   &bull; Accede al campus y revisa el modulo de bienvenida.<br>
                   &bull; Completa tu perfil de estudiante.<br>
                   &bull; Reserva un momento semanal para avanzar en la formacion.<br>
-                  {% if campus and (campus.enrollment_certificate_url or campus.educational_services_contract_url) %}
-                    &bull; Puedes descargar los documentos contractuales en los siguientes enlaces:<br><br>
-                    {% if campus.enrollment_certificate_url %}
-                      <a href="{{ campus.enrollment_certificate_url }}" style="color:#090A0B; text-decoration:underline;">Certificado de Matricula</a>
-                    {% endif %}
-                    {% if campus.enrollment_certificate_url and campus.educational_services_contract_url %} - {% endif %}
-                    {% if campus.educational_services_contract_url %}
-                      <a href="{{ campus.educational_services_contract_url }}" style="color:#090A0B; text-decoration:underline;">Contrato de servicios educativos</a>
-                    {% endif %}
-                    <br><br>
+                  &bull; Puedes descargar los documentos contractuales en los siguientes enlaces:<br><br>
+                  {% if campus and campus.enrollment_certificate_url %}
+                    <a href="{{ campus.enrollment_certificate_url }}" style="color:#090A0B; text-decoration:underline;">Certificado de Matricula</a> -
                   {% endif %}
+                  <a href="{{ educational_services_contract_url }}" style="color:#090A0B; text-decoration:underline;">Contrato de servicios educativos</a>
+                  <br><br>
                   Recuerda que el aprendizaje constante abre nuevas oportunidades,<br>
                   y hoy estas dando un gran paso hacia ellas.
                 </p>
@@ -114,7 +109,7 @@
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%; border-collapse:collapse;">
                   <tr>
                     <td align="center" bgcolor="#EE5522" style="border-radius:24px; background-color:#EE5522;">
-                      <a href="{{ campus.platform_url if campus and campus.platform_url else '#' }}" style="display:block; padding:13px 24px; color:#ffffff; font-size:16px; line-height:20px; font-weight:700; text-align:center; text-decoration:none; border-radius:24px;">
+                      <a href="{{ campus_platform_url }}" style="display:block; padding:13px 24px; color:#ffffff; font-size:16px; line-height:20px; font-weight:700; text-align:center; text-decoration:none; border-radius:24px;">
                         Accede a la plataforma
                       </a>
                     </td>
